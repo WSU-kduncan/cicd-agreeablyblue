@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/moving_From_2D.css">
+  <title>Moving From 2D</title>
+</head>
+
+<body>
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <div class="contentWrapper">
+
+    <h2 id="other-properties-of-3-d-axes.">Other properties of 3-D axes.</h2>
+    <p>So far, we have talked about "adding" another axis to move from 2-D to 3-D. This new axis has to meet some requirements though. First, it has to be unit length and orthogonal to the first two axes. This leads us with two choices, leading us to
+      the second constraint. Second, the axes must form a "right-handed" set of axes<sup><b>1</b></sup>. Mathematically, this is defined as putting the three axes in a matrix and making sure the matrix has a determinate of +1 (<em>not</em> -1).
+      Conceptually, it is called a right-handed coordinate system because if you cross-product the x and y axes together, you can use your right hand to determine the direction of the z-axis. If you start with your fingers pointing in the direction
+      of the x axis and orient your hand such that your fingers curl towards the y axis, your thumb will be pointing in the direction of the z axis.</p>
+    <p>So, consider <b>Figure 1 (a)</b>. This is a right-handed coordinate system because <b>e<sub>1</sub></b> x <b>e<sub>2</sub></b>, where <b>x</b> represents the cross product, leads to the 3rd axis coming out of the page towards you. If instead
+      it went "into" the page, then it would be a left-handed coordinate system.</p>
+    <p>Note that a right-handed coordinate system has the following three properties:</p>
+    <ol>
+      <li> <b>e<sub>1</sub></b> x <b>e<sub>2</sub></b> = <b>e<sub>3</sub></b> </li>
+      <li> <b>e<sub>2</sub></b> x <b>e<sub>3</sub></b> = <b>e<sub>1</sub></b> </li>
+      <li> <b>e<sub>3</sub></b> x <b>e<sub>1</sub></b> = <b>e<sub>2</sub></b> </li>
+    </ol>
+    <p>If one is satisfied, all three properties are satisfied, but it is worth knowing that any two vectors imposes a directionality constraint on the other vectors.</p>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="eulerRotations.html" class="previous">&larr; Previous</a>
+    <a href="creatingFullRotationIn3D.html" class="next">Next &rarr;</a>
+
+    <br>
+    <br>
+    <section class="footnotes" role="doc-endnotes">
+      <hr />
+      <ol>
+        <li id="fn2" role="doc-endnote">
+          <p>We will discuss in more detail why this constraint is important when we get to DCM-based representations of rotation</p>
+        </li>
+      </ol>
+    </section>
+
+  </div>
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+
+</body>
+
+</html>

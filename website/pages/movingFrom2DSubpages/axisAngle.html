@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/moving_From_2D.css">
+  <title>Reference Frames</title>
+</head>
+
+<body>
+
+  <!-- Container for the generated navigation bar. Nav bar is found in nav.html -->
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <!-- Wrapper to place the contents of the webpage (paragraphs from papers, images, demos, etc..) -->
+  <div class="contentWrapper">
+  <h1 id="axisAngleHeader">Axis Angle</h1>
+
+  <p>While a 3-axis set of rotations can represent all possible rotations, a more succinct way to represent rotations in 3-D is to </p>
+
+
+  <br>
+  <br>
+  <a href="yawPitchRoll.html" class="previous">&larr; Previous</a>
+
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+  </div>
+
+  <!-- Script to generate nav bar. It's loaded from nav.html and placed in the nav-placeholder container -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+  <!-- End of Navigation loading script -->
+</body>
+
+</html>

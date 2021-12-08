@@ -1,0 +1,272 @@
+body {
+
+  background-color: #F5F5F5;
+}
+
+
+
+header h1::before{
+  content: "Coordinate ";
+}
+header h1::after{
+  content: "Transformations";
+  color: #508DB9;
+}
+
+.translations{
+  color: #508DB9;
+}
+
+.navMenu a:hover{
+  color: black;
+}
+
+.introduction a:link {
+color: #508DB9;
+text-decoration: none;
+}
+
+.introduction a:visited {
+color: #999999;
+text-decoration: none;
+}
+
+.introduction a:hover {
+color: #999999;
+text-decoration: none;
+}
+
+
+ul li:hover ul.dropDown{
+  display:block;
+}
+
+
+/* If the screen size is 601px wide or more */
+@media screen and (min-width: 601px) {
+  .contentWrapper{
+    margin:0 22vw 0 22vw;
+    font-size: 0.9vw;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+  .authorP{
+    font-size: 14px;
+  }
+
+  .designerP{
+    font-size: 14px;
+  }
+
+  header h2{
+    color: black;
+    font-weight: 1000;
+    font-size: 1.5vw;
+  }
+
+  header h3{
+    color: black;
+    font-weight: 1000;
+    font-size: 1.5vw;
+  }
+
+  /* Nav menu section  */
+
+  ul button{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    font-variant: small-caps;
+    border: none;
+    background: none;
+    font-size: 20px;
+
+  }
+
+  .navMenu{
+    padding: 5px 0 5px 0;
+    text-align: center;
+    line-height: 32px;
+    background-color: #508DB9;
+  }
+
+  ul.navMenu{
+    margin-top: 15px;
+  }
+
+  .navMenu li{
+    display: inline-block;
+    padding: 0 5px 0 5px;
+    font-size: 20px;
+  }
+
+  .navMenu a{
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    font-variant: small-caps;
+  }
+
+  ul li ul.dropDown{
+    display:none;
+    text-align:left;
+    position: absolute;
+    background-color: #508DB9;
+    padding: 0 5px 0 5px;
+
+
+  }
+
+  .dropDown a{
+    font-size: 14px;
+  }
+  /* End of nav menu section */
+
+  #wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1vmax;
+
+  }
+
+  .header1{
+    background-color: #333333;
+    height: 12vh;
+    text-align: center;
+
+  }
+
+  header h1{
+    text-transform: uppercase;
+    font-size: 3vmax;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #fff;
+    padding-left: 0.5vw;
+    line-height: 12vh;
+    display: inline;
+  }
+
+  .antLogo img{
+    position:absolute;
+    left: 85vw;
+    top: 1.5vh;
+  }
+}
+
+/* If the screen size is 600px wide or less */
+@media screen and (max-width: 600px) {
+  .contentWrapper{
+    margin:0 12vw 0 12vw;
+    font-size: 3vw;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+  .authorP{
+    font-size: 3vw;
+  }
+
+  .designerP{
+    font-size: 3vw;
+  }
+  .propertiesOf3DAxesA:after{
+    content: "Props. 3D Axes"
+  }
+  .fullRotationsA:after{
+    content: "Full Rotations"
+  }
+  header h2{
+    color: black;
+    font-weight: 1000;
+    font-size: 4.5vw;
+  }
+
+  header h3{
+    color: black;
+    font-weight: 1000;
+    font-size: 4.5vw;
+  }
+
+  /* Nav menu section  */
+  .navMenu{
+    padding: 5px 0 5px 0;
+    text-align: center;
+    line-height: 2vh;
+    background-color: #508DB9;
+  }
+
+  ul.navMenu{
+    margin-top: 15px;
+  }
+
+  ul button{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    font-variant: small-caps;
+    border: none;
+    background: none;
+    font-size: 3.5vw;
+    outline:none;
+
+  }
+  .navMenu li{
+    display: inline-block;
+    padding: 0 5px 0 5px;
+    font-size: 3.5vw;
+  }
+
+  .navMenu a{
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    font-variant: small-caps;
+  }
+
+  ul li ul.dropDown{
+    display:none;
+    text-align:left;
+    position: absolute;
+    background-color: #508DB9;
+    padding: 0 5px 0 5px;
+
+
+  }
+
+  .dropDown a{
+    font-size: 14px;
+  }
+  /* End of nav menu section */
+
+  #wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 1vmax;
+
+  }
+
+  .header1{
+    background-color: #333333;
+    height: 12vh;
+    text-align: center;
+
+  }
+
+  header h1{
+    text-transform: uppercase;
+    font-size: 5vw;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    color: #fff;
+    padding-left: 0.5vw;
+    line-height: 12vh;
+    display: inline;
+  }
+
+  .antLogo img{
+    position:absolute;
+    left: 50vw;
+    top: 1.5vh;
+    visibility:hidden;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/reference_Frames.css">
+  <title>Reference Frames</title>
+</head>
+
+<body>
+
+  <!-- Div that holds the navigation bar generated from a script at the bottom of the page and the file pages/nav.html -->
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <!-- Div that holds all the content of the web page from the papers -->
+  <div class="contentWrapper">
+
+    <p><a name="toc.3">
+        <h1>3&nbsp;Changing Coordinate Frames</h1>
+        A reference frame for Cartesian coordinate systems is defined by two things: an origin and a set of orthonormal vectors that define directions away from the origin. Let's start with a change of origin location. We will be attempting to
+        transform from my (<i>m</i>) coordinate frame to yours (<i>y</i>).
+        <br>
+        <br>
+
+        <p><small><a name="toc.3.1">
+              <h2>3.1&nbsp;Handling a change in coordinate origin</h2></small>
+          <i>If you and I are both facing the same direction</i>, all you need to know is where <b>I</b> am in your coordinate frame. We denote this quantity <b>m</b> where the coordinate frame's letter is bolded to show it is a vector. The
+          transformation is now a simple vector addition operation
+          <br>
+          <center><b>x<sup>y</sup></b>=<b>x<sup>m</sup> + m</b></center>
+
+          This addition is illustrated in Figure 2. While this equation is conceptually very simple, please realize it is for pedagogical purposes only! In fact, <i>please forget it</i> because the caveat to use it, that the axes are the same for the
+          coordinate frames m and y, makes it almost useless. (That is why that equation is <i>not</i> numbered! Please don't refer to it!)
+
+          <br>
+          <br>
+
+          <img src="../../images/referenceFrames_Figure2.png" alt="Example 1" style="max-width:100%; display:block; margin-left: auto; margin-right: auto;" />
+
+
+          <a href="coordinateSystems.html" class="previous">&larr; Previous</a>
+          <a href="convertingVectors.html" class="next">Next &rarr;</a>
+          <br>
+          <br>
+          <hr />
+          <br>
+
+  </div>
+
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+
+</body>
+
+</html>

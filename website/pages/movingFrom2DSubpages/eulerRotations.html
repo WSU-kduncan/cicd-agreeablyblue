@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/moving_From_2D.css">
+  <title>Moving From 2D</title>
+</head>
+
+<body>
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+
+  <div class="contentWrapper">
+
+    <h1 id="euler-rotations">Euler Rotations</h1>
+    <p>With a third basis vector added to the coordinate frame, the rotation that we performed in the first chapter can now be visualized, not as an abstract rotation, but as a specific rotation around the third axis. In Figure 1, we show both a
+      "left" and a "right"-handed rotation about <span class="math inline"><strong>e</strong><sub>3</sub></span>. This can be viewed as putting your thumb in the same direction as axis <span class="math inline"><strong>e</strong><sub>3</sub></span>
+      and the direction your fingers point is the way a "positive" rotation will occur.</p>
+    <p>The mathematical representation of this rotation is very similar to what we had in 2-D, namely:
+      <br>
+      <br>
+      <img src="../../images/movingFrom2DMatrixImages/matrix1.png" width="250" height="78" alt="Example 1" style="display:block; margin-left: auto; margin-right: auto;" />
+
+      </span><br /> Note that this represents a "right"-handed rotation about the <span class="math inline"><em>z</em></span> axis.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> It is also denoted as <span
+        class="math inline"><em>C</em><sub>3</sub></span> to show that we are rotating about the third axis.</p>
+    <p>If, instead, we wanted to rotate about a different axis, we could follow a very similar pattern, namely:<br />
+      <strong>Rotation about <span class="math inline"><em>x</em></span>:</strong>
+      <br />
+      <br>
+      <img src="../../images/movingFrom2DMatrixImages/matrix2.png" width="250" height="78" alt="Example 1" style="display:block; margin-left: auto; margin-right: auto;" />
+      <br>
+      <strong>Rotation about <span class="math inline"><em>y</em></span>:</strong> <br />
+      <br>
+      <img src="../../images/movingFrom2DMatrixImages/matrix3.png" width="250" height="78" alt="Example 1" style="display:block; margin-left: auto; margin-right: auto;" />
+      <br>
+    <p>There is a pattern to these matrices that is worth discussing. First, the axis which is being rotated about has a column and row with two 0s and one 1. So, equations <b>(2)</b>, <b>(3)</b>, and <b>(1)</b> represent (right-handed) rotations
+      around the <b>x</b>, <b>y</b>, and <b>z</b> axes, respectively. Second, because these are right-handed rotations, the row right after the axis being rotated over has the positive sin θ term, and the line after that has the negative term. For
+      Equations <b>(2)</b> and <b>(1)</b> this is easy to see. For Equation <b>(3)</b>, note that the 3rd row comes after the <b>y</b> row, and it has a positive sin θ term, while the first row (following the third row) has the − sin θ value.</p>
+    <p>Tying back into chapter one, note that all of these rotations are assumed to be <em>reference frame</em> rotations and not object rotations. If they were object rotations, the rows following the axis being rotated around would have - sin
+      values.</p>
+
+
+    <br>
+    <br>
+    <button type="button" class="btnStart" id="btnStart">Play Animation</button>
+    <br>
+    <br>
+    <br>
+    <div class="contentHolder" id="contentHolder" style="margin-left:32%; margin-right: 32%;">Neutral position of the coordinate plane.</div>
+    <div class="container" id="container" style="position:relative;">
+
+    </div>
+
+    <div class="exampleWrapper">
+      <div class="exampleText" id="exampleText"><b>Euler Rotation Example:</b> Y-axis is <span style="color:#008000";>green</span>, X-axis is <span style="color:#0000FF";>blue</span>, and Z-axis is <span style="color:#FF0000";>red</span></div>
+    </div>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="/coordinateTranslationWebsite/pages/movingFrom2DIntro.html" class="previous">&larr; Previous</a>
+    <a href="propertiesOf3DAxes.html" class="next">Next &rarr;</a>
+
+    <br>
+    <br>
+
+    <section class="footnotes" role="doc-endnotes">
+      <hr />
+      <ol>
+        <li id="fn1" role="doc-endnote">
+          <p>Right-handed rotations are the standard, for reasons that will be discussed later.</p>
+        </li>
+      </ol>
+    </section>
+
+
+
+  </div>
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+
+  <!-- Calls For All ThreeJS Scripts Utilized -->
+  <script src="../../js/three.js"></script>
+  <script src="../../js/MTLLoader.js"></script>
+  <script src="../../js/OBJLoader.js"></script>
+  <script src="../../js/OrbitControls.js"></script>
+  <script src="../../js/TransformControls.js"></script>
+  <!-- End ThreeJS Call -->
+
+  <!-- Script Call For Developer Defined ThreeJS Scene Render -->
+  <!-- /coordinateTranslationWebsite/scripts/ -->
+  <script src="../../scripts/eulerRotation_example.js"></script>
+  <!-- End Script Call -->
+
+</body>
+
+</html>

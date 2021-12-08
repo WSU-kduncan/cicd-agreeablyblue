@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coordinate Transformations</title>
+  <link rel="stylesheet" href="css/index_styleSheet.css">
+
+</head>
+
+<body>
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+  <div class="contentWrapper">
+
+    <header class="header2">
+      <h2>About the Research</h2>
+    </header>
+
+    <!-- Introduction paragraph -->
+    <p class="researchP">
+      This website is meant to explain the basics of what a reference frame is in 2-D space, how to define the location of objects in that reference frame using vectors, and handling changes in coordinate frames. On this site you can also find
+      representations of the following rotations in 3-D space:
+    <ul class="introduction" id="introduction">
+      <li><a href="pages/referenceFrameSubpages/frameVsObjectRotation.html">Frame vs Object rotation</a></li>
+      <li><a href="pages/movingFrom2DIntro.html">Cartesian coordinate system right-handed & left-handed rotations</a></li>
+      <li><a href="pages/movingFrom2DSubpages/eulerRotations.html">Euler rotations</a></li>
+      <li><a href="pages/movingFrom2DSubpages/creatingFullRotationIn3D.html">Full rotations in 3D</a></li>
+      <li><a href="pages/movingFrom2DSubpages/yawPitchRoll.html">Yaw-Pitch-Roll rotation representations</a></li>
+    </ul>
+    <br>
+    Dr. Clark Taylor has provided research on these topics, and you'll find interactive examples within each paper to help you along the way.
+    </p>
+
+    <br>
+    <br>
+    <hr />
+
+    <!-- About the author sections -->
+    <header class="authorInformation">
+      <h3>About the Staff</h3>
+    </header>
+
+    <img src="images/clarkTaylor.jpg" width="75" height="105" alt="Dr. Clark Taylor" style="float:left; margin-right: 20px;" />
+
+    <p class="authorP">
+      Dr. Clark Taylor has been an Assistant Professor of Electrical and Computer Engineering at the Air Force Institute of Technology since 2018. He holds a Ph.D. in Electrical and Computer Engineering (Computer Engineering) from the University of
+      California where he graduated in 2004. He has provided research on the topic of coordinate transformations which is discussed throughout this website.
+    </p>
+
+    <br>
+    <br>
+    <img src="images/shawnRuby.png" width="75" height="105" alt="Shawn Ruby" style="float:left; margin-right: 20px;" />
+
+    <p class="designerP">
+      Shawn Ruby is an undergraduate student who is interning at the ANT center within the Air Force Institute of Technology. He is currently studying for a Computer Science degree, and because of that, he has been responsible for the website and web
+      app development portions of this project.</p>
+    <br>
+  </div>
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("pages/nav.html");
+    });
+  </script>
+
+</body>
+
+</html>

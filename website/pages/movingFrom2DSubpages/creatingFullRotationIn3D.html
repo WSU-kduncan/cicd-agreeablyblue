@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/moving_From_2D.css">
+  <title>Moving From 2D</title>
+</head>
+
+<body>
+
+  <div class="nav-placeholder" id="nav-placeholder"></div>
+  <div class="contentWrapper">
+
+    <h2 id="creating-a-full-rotation-in-3-d">Creating a full rotation in 3-D</h2>
+    <p>While so far we have implemented 2-D rotations, but in a 3-D coordinate system, what we would really like to do is create a full 3-D rotations. Luckily, any 3-D rotation can be decomposed into a set of three 2-D rotations in sequence. So, for
+      example, we could first rotate about the <span class="math inline"><em>z</em></span> axis, followed by a rotation about the <span class="math inline"><em>y</em></span> axis, and then the <span class="math inline"><em>x</em></span> axis. The
+      full rotation would be: <br /><span class="math display"><em>C</em><sub>1</sub><em>C</em><sub>2</sub><em>C</em><sub>3</sub></span><br /> and is termed a 3-2-1 rotation because we rotate about the 3rd axis first. Note, however, that in the
+      equation the rotations matrices are ordered 1,2,3. This is because when there is a position (a vector), it will be on the right of the matrices, so the multiplication essentially goes from right to left (3-2-1). Just remember that the math
+      expressed things from right to left (imagine the vector running through the matrices; the vector starts on the right), while we describe it in written format from left-to-right.</p>
+    <p>This notation actually introduces 12(!) different ways we can express a 3-D rotation. Any 3-D rotation can be expressed as a sequence of three axis rotations. If two rotations in a row use the same axis, they are redundant, so we have all
+      rotations i-j-k, where i,j,k are either 1,2, or 3 and both i <span>&#8800;</span> j and j <span>&#8800;</span> k. More precisely, the following ordered sets of rotations about an axis are all valid representations of a rotation in 3-D:</p>
+
+    <img src="../../images/movingFrom2DMatrixImages/table1.png" width="293" height="90" alt="Example 1" style="display:block; margin-left: auto; margin-right: auto;" />
+
+
+    <p>A few comments are in order on these rotations:</p>
+    <ol>
+      <li>
+        <p><em><b>THE ORDER IN WHICH THE OPERATIONS OCCURS MATTERS!</em></b> Sorry for shouting, but it is a very important point and can catch up even experienced rotation experts on occasion. With the exact same angles around the three axes, a
+          1-2-3 rotation will be very different from a 3-2-1 rotation. So, a 1-2-3 rotation of 30, 40, and 25 degrees is <em>not</em> the same as a 3-2-1 rotation of 25, 40, and 30 degrees.</p>
+      </li>
+      <li>
+        <p>The shaded rotations on the left are interesting because they repeat one of the axes. The ones on the right differ <b>only</b> in their ordering of the 3 unique axes.</p>
+      </li>
+      <li>
+        <p>While the representation may be very different, they all represent the same physical phenomenon, a rotation in 3-D space. So, for example, a 1-2-3 rotation of 30, 40, and 25 degrees.</p>
+      </li>
+    </ol>
+    <p>First, let's discuss why different orderings lead to different representations of the same rotation. Consider <b>Figure 2 (a-c)</b> which shows just two rotations in a row (3-2), the rotation around axis 3 being 30 degrees and the rotation
+      around axis 2 being 40 degrees. Then in <b>Figure 2</b>, the same two axis rotations are applied, but in the opposite order (axis 2 by 40 degrees, axis 3 by 30 degrees). Note that the after rotation around axis 2 by 40 degrees, axis 3 is in a
+      different location (figure(d)) then it is in figure(a). This means that the same rotation by 30 degrees around axis 3 leads to very different rotations in the world. This is the reason why the ordering of the axes is critical. Therefore, a
+      (3-2-1) rotation will be very different from a (1-2-3) rotation, even if the angles applied to each axis are the same in both rotations.</p>
+
+    <p>The below example shows two rotations side by side with different orders. The first coordinate system rotates by 30&#176; about the <span style="color:#008000;">Y-axis</span> (indicated by the <span style="color:#008000;">green</span> line), then by 40&#176; about the <span style="color:#0000FF;">X-axis</span> (indicated by the <span style="color:#0000FF;">blue</span> line), and finally by 30&#176; about the <span style="color:#FF0000;">Z-axis</span>.
+       The second coordinate system does the same degrees of rotation about each axis but in reverse order (rotation about <span style="color:#FF0000;">Z-axis</span>, <span style="color:#0000FF;">X-axis</span>, then <span style="color:#008000;">Y-axis</span>). This example demonstrates how the results of a rotation can be vastly different based on the order the operations occur. 
+    </p>
+
+    <br>
+    <button type="button" class="btnStart" id="btnStart">Play Animation</button>
+    <br>
+    <br>
+    <br>
+    <div class="rotationy" id ="rotationy"></div>
+
+    <div class="container" id="container" style="position:relative;">
+      <div class="contentHolder" id="contentHolder" style="position:absolute; top:1vh; left: 5vw;">(a) The original 3-D coordinate system</div>
+      <div class="contentHolder2" id="contentHolder2" style="position:absolute; top:1vh; left: 30vw;">(a) The original 3-D coordinate system</div>
+    </div>
+
+    <div class="exampleWrapper">
+      <div class="exampleText" id="exampleText"><b>Figure 2:</b> An example of a "flipped order" rotation and why they are not the same.</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <a href="propertiesOf3DAxes.html" class="previous">&larr; Previous</a>
+    <a href="yawPitchRoll.html" class="next">Next &rarr;</a>
+    <br>
+    <br>
+    <hr />
+  </div>
+
+  <!-- Calls For All ThreeJS Scripts Utilized -->
+  <script src="../../js/three.js"></script>
+  <script src="../../js/MTLLoader.js"></script>
+  <script src="../../js/OBJLoader.js"></script>
+  <script src="../../js/OrbitControls.js"></script>
+  <script src="../../js/TransformControls.js"></script>
+  <!-- End ThreeJS Call -->
+
+  <!-- Script Call For Developer Defined ThreeJS Scene Render -->
+  <!-- /coordinateTranslationWebsite/scripts/ -->
+  <script src="../../scripts/fullRotation_example.js"></script>
+  <!-- End Script Call -->
+
+  <!--Navigation bar-->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    $(function() {
+      $("#nav-placeholder").load("../nav.html");
+    });
+  </script>
+
+
+</body>
+
+</html>
